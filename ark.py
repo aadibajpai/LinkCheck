@@ -6,6 +6,7 @@ from datetime import datetime
 import time
 import sys
 import vlc
+import urllib.parse
 
 
 def findLink(links):
@@ -21,14 +22,11 @@ def findLink(links):
 FileName = sys.argv[1]
 raw_url = input("Input the URL where you want to find the link: ")
 pattern = input("Input the pattern which you want to find: ")
-url_start="https://www."
-url_start2=r"www."
-if re.match(url_start, raw_url):
-    url = raw_url
-elif re.match(url_start2, raw_url):
-    url = "https://"+raw_url
+parsed_url = urllib.parse.urlparse(raw_url)
+if bool(parsed_url.scheme) == True:
+    url=parsed_url
 else:
-    url = url_start+raw_url
+    url = "http://"+raw_url
 
 with urllib.request.urlopen(url) as cont:
     urler = cont.read()
@@ -39,6 +37,7 @@ links = soup.find_all('a')
 if findLink(links):
         p = vlc.MediaPlayer(FileName)
         p.play()
+        print("--------------------------------- \n Input q to stop the music. \n---------------------------------")
         while True:
             key = sys.stdin.read(1)
             if key == 'q': 
