@@ -19,9 +19,13 @@ def findLink(links):
             time.sleep(60)
         
 FileName = sys.argv[1]
-url = input("Input the URL where you want to find the link: ")
+raw_url = input("Input the URL where you want to find the link: ")
 pattern = input("Input the pattern which you want to find: ")
-
+url_start="https://www."
+if re.match(url_start, raw_url):
+    url = raw_input
+else:
+    url = url_start+raw_url
 
 with urllib.request.urlopen(url) as cont:
     urler = cont.read()
