@@ -23,7 +23,7 @@ raw_url = input("Input the URL where you want to find the link: ")
 pattern = input("Input the pattern which you want to find: ")
 url_start="https://www."
 if re.match(url_start, raw_url):
-    url = raw_input
+    url = raw_url
 else:
     url = url_start+raw_url
 
