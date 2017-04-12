@@ -24,6 +24,8 @@ pattern = input("Input the pattern which you want to find: ")
 url_start="https://www."
 if re.match(url_start, raw_url):
     url = raw_url
+elif re.match(url_start2, raw_url):
+    url = "https://"+raw_url
 else:
     url = url_start+raw_url
 
