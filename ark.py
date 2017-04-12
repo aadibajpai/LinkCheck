@@ -22,6 +22,7 @@ FileName = sys.argv[1]
 raw_url = input("Input the URL where you want to find the link: ")
 pattern = input("Input the pattern which you want to find: ")
 url_start="https://www."
+url_start2=r"www."
 if re.match(url_start, raw_url):
     url = raw_url
 elif re.match(url_start2, raw_url):
