@@ -24,7 +24,7 @@ raw_url = input("Input the URL where you want to find the link: ")
 pattern = input("Input the pattern which you want to find: ")
 parsed_url = urllib.parse.urlparse(raw_url)
 
-url = parsed_url if parsed_url.scheme else "http://"+raw_url
+url = raw_url if parsed_url.scheme else "http://"+raw_url
 
 try:
     with urllib.request.urlopen(url) as cont:
