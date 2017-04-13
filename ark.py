@@ -7,7 +7,7 @@ import time
 import sys
 import vlc
 import urllib.parse
-
+from urllib.error import URLError
 
 def findLink(links):
     while True:
@@ -23,14 +23,15 @@ FileName = sys.argv[1]
 raw_url = input("Input the URL where you want to find the link: ")
 pattern = input("Input the pattern which you want to find: ")
 parsed_url = urllib.parse.urlparse(raw_url)
-if bool(parsed_url.scheme) == True:
-    url=parsed_url
-else:
-    url = "http://"+raw_url
 
-with urllib.request.urlopen(url) as cont:
-    urler = cont.read()
+url = parsed_url if parsed_url.scheme else "http://"+raw_url
 
+try:
+    with urllib.request.urlopen(url) as cont:
+        urler = cont.read()
+except URLError:
+    sys.exit("ERROR: Not a valid URL")
+    
 soup = BeautifulSoup(urler, "html.parser")
 links = soup.find_all('a')
 
