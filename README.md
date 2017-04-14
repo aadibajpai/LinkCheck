@@ -47,6 +47,7 @@ Ideally, I would check out the time when the previous episodes were released on 
 - Don't forget to specify the audio file path as a command line argument.
 - It cuts down on typing time if you place the audio file in the same folder.
 - Piracy isn't cool, I don't recommend pirating TV shows, the [Example Usage](https://github.com/TheClashster/LinkCheck/blob/master/README.md#example-usage) part is hypothetical ~~maybe~~
+- Try to specify the pattern as much as you can for more accuracy
 
 Thanks for putting up with this ~~slightly~~ *detailed* document and/or using LinkCheck
 
