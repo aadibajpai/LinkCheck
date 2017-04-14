@@ -49,5 +49,6 @@ Ideally, I would check out the time when the previous episodes were released on 
 - Piracy isn't cool, I don't recommend pirating TV shows, the [Example Usage](https://github.com/TheClashster/LinkCheck/blob/master/README.md#example-usage) part is hypothetical ~~maybe~~
 
 Thanks for putting up with this ~~slightly~~ *detailed* document and/or using LinkCheck
+
 **Feedback appreciated.**
 ###### Thanks a lot to [Aniket Bhattacharyea](https://github.com/AniketTheGreat) for his help.
