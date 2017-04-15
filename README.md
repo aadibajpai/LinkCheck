@@ -1,5 +1,5 @@
 # LinkCheck
-The idea, and need, for LinkCheck was conceived during my exams when I couldn't afford to waste time refreshing websites to wait for torrents of TV shows to be out, and I didn't want to be late in watching them too. So, along with help from @AniketTheGreat this was created for such situations when you don't want to compromise on time and to get something without delay.
+Originally conceived as a notifier so I could watch TV shows the moment they're out without manually refreshing the website every minute, LinkCheck is your go-to script when you want something straight away without compromising on time.
 ## Application
 - Booking movie tickets just as when booking starts and getting the best seats.
 - Setting it up to be notified when a new torrent is out.
