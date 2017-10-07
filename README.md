@@ -52,4 +52,4 @@ Ideally, I would check out the time when the previous episodes were released on 
 Thanks for putting up with this ~~slightly~~ *detailed* document and/or using LinkCheck
 
 **Feedback appreciated.**
-###### Thanks a lot to [Aniket Bhattacharyea](https://github.com/AniketTheGreat) for his help.
+###### Thanks a lot to [Aniket Bhattacharyea](https://github.com/BrokenMutant) for his help.
