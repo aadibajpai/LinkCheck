@@ -7,6 +7,8 @@ import time
 import sys
 import vlc
 import urllib.parse
+import argparse
+import glob
 from urllib.error import URLError
 
 def findLink(links):
@@ -18,8 +20,23 @@ def findLink(links):
         else:
             print("Not yet")
             time.sleep(60)
-        
-FileName = sys.argv[1]
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-f',action='store',dest='filename',help='If specified, use the file instead of searching in current directory',default='none')
+args = parser.parse_args();
+FileName = ''
+if args.filename == 'none':
+    #No file specified, search directory
+    print("Searching directory for music file.")
+    files = glob.glob('./*.mp3')
+    if len(files) == 0:
+        print("No music file found, exiting")
+        exit(1)
+    FileName = files[0] #If more than one are found, take the first one
+else:
+    FileName = args.filename
+print("Using "+FileName+" as music file")
+
 raw_url = input("Input the URL where you want to find the link: ")
 pattern = input("Input the pattern which you want to find: ")
 parsed_url = urllib.parse.urlparse(raw_url)
