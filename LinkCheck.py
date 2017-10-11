@@ -27,12 +27,19 @@ args = parser.parse_args();
 FileName = ''
 if args.filename == 'none':
     #No file specified, search directory
+    music_extensions = ['mp3','ogg','wav']
     print("Searching directory for music file.")
-    files = glob.glob('./*.mp3')
-    if len(files) == 0:
-        print("No music file found, exiting")
+    for ext in music_extensions:
+        print("Trying to find musics with extension name: "+ext)
+        files = glob.glob('./*.'+ext)
+        if len(files) == 0:
+            print("No music file found for extension:"+ext)
+        else:
+            FileName = files[0]
+            break
+    if not FileName:
+        print("No music found, exiting.")
         exit(1)
-    FileName = files[0] #If more than one are found, take the first one
 else:
     FileName = args.filename
 print("Using "+FileName+" as music file")
