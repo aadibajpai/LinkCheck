@@ -10,9 +10,10 @@ It fetches all the links from a user-specified website and scans them for a user
 1. The music file needs to be specified as an argument in the command prompt when you execute the file.
 2. So, after navigating to the LinkCheck folder, input 
 ``` python
-py LinkCheck.py FileName
+py LinkCheck.py -f FileName
 ```
 >Here, FileName is the path to the Music file of your choice.
+If you omit the filename, LinkCheck will search for .mp3, .ogg and .wav files in the current directory. If no music files are found, it will exit. If more than one are found, the first one will be used. 
 3. Next, input the website you want to scrape.
 4. Input the pattern you want to find, using regular expressions if you want.
 5. If the pattern is found, the music starts playing. Else it searches again after a minute.
